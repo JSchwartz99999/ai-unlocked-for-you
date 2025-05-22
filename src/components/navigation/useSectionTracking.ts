@@ -17,9 +17,12 @@ export const useSectionTracking = () => {
       // Set active section based on URL hash
       const hash = window.location.hash;
       if (hash) {
-        setActiveSection(hash.substring(1));
+        const section = hash.substring(1);
+        setActiveSection(section);
+        console.log("Active section set from URL hash:", section);
       } else {
         setActiveSection('home');
+        console.log("Active section defaulted to home");
       }
     };
 

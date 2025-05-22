@@ -15,18 +15,31 @@ export const useNavigation = () => {
     const currentLocation = window.location.href.split('#')[0];
     window.history.pushState(null, '', `${currentLocation}#${section}`);
     
-    // Then handle the scrolling separately with a small delay
+    // Then handle the scrolling separately with a longer delay to ensure the DOM is ready
     setTimeout(() => {
-      const element = document.getElementById(section);
-      console.log("Looking for element with ID:", section);
+      // Try to find element directly by ID
+      let element = document.getElementById(section);
+      
+      // If not found, try to find it via a data attribute
+      if (!element) {
+        element = document.querySelector(`[data-section="${section}"]`);
+      }
+      
+      console.log("Looking for section:", section);
       console.log("Element found:", !!element);
       
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       } else {
-        console.log("Element not found for section:", section);
+        console.error("Navigation target not found:", section);
+        // Fallback: look for sections dynamically
+        const sections = document.querySelectorAll('section');
+        console.log("Available sections on page:", sections.length);
+        Array.from(sections).forEach((s, i) => {
+          console.log(`Section ${i}:`, s.id || 'no-id');
+        });
       }
-    }, 50);
+    }, 100); // Increased timeout to ensure DOM is ready
   };
 
   return {

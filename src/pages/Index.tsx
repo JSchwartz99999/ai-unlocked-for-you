@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
@@ -30,7 +29,7 @@ const Index = () => {
         <Hero />
         
         {/* Features Section */}
-        <section className="py-20 bg-white dark:bg-gray-900">
+        <section id="ai-basics" data-section="ai-basics" className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
               <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
@@ -84,7 +83,7 @@ const Index = () => {
         </section>
         
         {/* Stats Section */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section id="ml-intro" data-section="ml-intro" className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-6 md:px-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="p-6">
@@ -127,7 +126,7 @@ const Index = () => {
         <InteractiveDemo />
         
         {/* Testimonials Section */}
-        <section className="py-16 bg-white dark:bg-gray-900">
+        <section id="neural-networks" data-section="neural-networks" className="py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
               <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
@@ -203,8 +202,106 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Call to Action */}
-        <section className="py-16 relative overflow-hidden bg-gray-50 dark:bg-gray-800">
+        {/* No-Code AI Section */}
+        <section id="no-code-ai" data-section="no-code-ai" className="py-16 bg-gray-100 dark:bg-gray-800">
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <span>No-Code AI</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Build AI Without Writing Code</h2>
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Our platform makes it easy to create powerful AI solutions without any programming knowledge.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Drag-and-Drop AI Builder</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  With our intuitive interface, you can create custom AI models by simply dragging and dropping components.
+                  No technical expertise required.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center">
+                    <div className="mr-2 bg-primary/10 p-1 rounded-full">
+                      <Sparkles className="h-4 w-4 text-primary" />
+                    </div>
+                    <span>Visual workflow editor</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-2 bg-primary/10 p-1 rounded-full">
+                      <Sparkles className="h-4 w-4 text-primary" />
+                    </div>
+                    <span>Pre-built components</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-2 bg-primary/10 p-1 rounded-full">
+                      <Sparkles className="h-4 w-4 text-primary" />
+                    </div>
+                    <span>One-click deployment</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+                <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg mb-4 flex items-center justify-center">
+                  <Database className="h-16 w-16 text-gray-400" />
+                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Interactive demo placeholder - No-Code AI Builder
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* AI Templates Section */}
+        <section id="ai-templates" data-section="ai-templates" className="py-16 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <span>AI Templates</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready-to-Use AI Templates</h2>
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Get started quickly with our collection of pre-built AI solutions for common use cases.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Custom Models Section */}
+        <section id="custom-models" data-section="custom-models" className="py-16 bg-gray-50 dark:bg-gray-800">
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <span>Custom Models</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Build Custom AI Solutions</h2>
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Create AI models tailored to your specific needs with our advanced customization tools.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* AI Tools Section */}
+        <section id="ai-tools" data-section="ai-tools" className="py-16 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <span>AI Tools</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Essential AI Tools</h2>
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Discover the tools that make building and using AI accessible to everyone.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Resources Section */}
+        <section id="resources" data-section="resources" className="py-16 relative overflow-hidden bg-gray-50 dark:bg-gray-800">
           {/* Background decorations */}
           <div aria-hidden="true" className="absolute inset-0">
             <div className="absolute top-0 left-0 -translate-y-12 translate-x-12 blur-3xl opacity-20 w-96 h-96 bg-gradient"></div>
