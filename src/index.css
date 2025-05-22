@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +22,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 262 83% 58%;
+    --accent: 262 70% 65%; /* Softer purple for accents/highlights */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -55,7 +54,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 262 70% 65%; /* Softer purple for accents/highlights in dark mode */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -147,6 +146,15 @@
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-shift 5s ease infinite;
+}
+
+/* Navigation menu active/hover styles */
+.navigation-active {
+  @apply bg-accent/20 text-accent font-medium;
+}
+
+.navigation-item:hover {
+  @apply bg-accent/10 text-accent transition-colors;
 }
 
 /* Improved card hover effects */

@@ -17,6 +17,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const isMobile = useIsMobile();
 
   // Handle scroll effect
@@ -27,9 +28,20 @@ const NavBar: React.FC = () => {
       } else {
         setScrolled(false);
       }
+      
+      // Set active section based on URL hash
+      const hash = window.location.hash;
+      if (hash) {
+        setActiveSection(hash.substring(1));
+      } else {
+        setActiveSection('home');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Initialize active section
+    handleScroll();
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -47,6 +59,21 @@ const NavBar: React.FC = () => {
     { href: "#ai-templates", title: "AI Templates", description: "Start with pre-built models" },
     { href: "#custom-models", title: "Custom Models", description: "Create AI tailored to your needs" },
   ];
+
+  const isActive = (section: string) => {
+    return activeSection === section;
+  };
+
+  const handleNavClick = (section: string) => {
+    setActiveSection(section);
+    setIsOpen(false); // Close mobile menu when clicking a nav item
+    
+    // Smooth scroll to section if it exists
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav 
@@ -72,55 +99,101 @@ const NavBar: React.FC = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
+                <NavigationMenuTrigger 
+                  className={cn(
+                    isActive('ai-basics') || isActive('ml-intro') || 
+                    isActive('neural-networks') || isActive('ai-tools')
+                      ? "navigation-active" : ""
+                  )}
+                >
+                  Learn
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[400px] p-4 md:grid-cols-2 lg:w-[500px]">
                     <ul className="grid gap-3 p-4">
-                      {learnLinks.map((link) => (
-                        <li key={link.href} className="row-span-1">
-                          <NavigationMenuLink asChild>
-                            <a
-                              href={link.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.title}</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                {link.description}
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
+                      {learnLinks.map((link) => {
+                        const section = link.href.substring(1);
+                        return (
+                          <li key={link.href} className="row-span-1">
+                            <NavigationMenuLink asChild>
+                              <a
+                                href={link.href}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleNavClick(section);
+                                }}
+                                className={cn(
+                                  "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-accent focus:bg-accent/10 focus:text-accent",
+                                  isActive(section) ? "navigation-active" : ""
+                                )}
+                              >
+                                <div className="text-sm font-medium leading-none">{link.title}</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                  {link.description}
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Build</NavigationMenuTrigger>
+                <NavigationMenuTrigger 
+                  className={cn(
+                    isActive('no-code-ai') || isActive('ai-templates') || isActive('custom-models') 
+                      ? "navigation-active" : ""
+                  )}
+                >
+                  Build
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[400px] p-4">
                     <ul className="grid gap-3 p-4">
-                      {buildLinks.map((link) => (
-                        <li key={link.href} className="row-span-1">
-                          <NavigationMenuLink asChild>
-                            <a
-                              href={link.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.title}</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                {link.description}
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
+                      {buildLinks.map((link) => {
+                        const section = link.href.substring(1);
+                        return (
+                          <li key={link.href} className="row-span-1">
+                            <NavigationMenuLink asChild>
+                              <a
+                                href={link.href}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleNavClick(section);
+                                }}
+                                className={cn(
+                                  "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-accent focus:bg-accent/10 focus:text-accent",
+                                  isActive(section) ? "navigation-active" : ""
+                                )}
+                              >
+                                <div className="text-sm font-medium leading-none">{link.title}</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                  {link.description}
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <a href="#resources" className={cn(navigationMenuTriggerStyle(), "cursor-pointer")}>
+                <a 
+                  href="#resources" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick('resources');
+                  }}
+                  className={cn(
+                    navigationMenuTriggerStyle(), 
+                    "cursor-pointer navigation-item",
+                    isActive('resources') ? "navigation-active" : ""
+                  )}
+                >
                   Resources
                 </a>
               </NavigationMenuItem>
@@ -128,15 +201,27 @@ const NavBar: React.FC = () => {
           </NavigationMenu>
           
           <div className="flex items-center space-x-2">
-            <Button variant="outline" size="sm">Sign Up</Button>
-            <Button size="sm" className="bg-gradient hover:opacity-90">Get Started</Button>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = "/signup"}
+            >
+              Sign Up
+            </Button>
+            <Button 
+              size="sm" 
+              className="bg-gradient hover:opacity-90"
+              onClick={() => handleNavClick('ai-basics')}
+            >
+              Get Started
+            </Button>
           </div>
         </div>
         
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
-            className="p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100"
+            className="p-2 rounded-md text-gray-600 hover:text-accent hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -150,59 +235,111 @@ const NavBar: React.FC = () => {
           <div className="px-4 py-2 space-y-1">
             <div className="py-2">
               <div 
-                className="flex justify-between items-center p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+                className={cn(
+                  "flex justify-between items-center p-3 rounded-md cursor-pointer",
+                  (isActive('ai-basics') || isActive('ml-intro') || 
+                   isActive('neural-networks') || isActive('ai-tools')) 
+                    ? "navigation-active" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                )}
                 onClick={() => document.querySelector('#mobile-learn')?.classList.toggle('hidden')}
               >
                 <span className="font-medium">Learn</span>
                 <ChevronDown size={18} />
               </div>
               <div id="mobile-learn" className="hidden ml-4 mt-1 space-y-1">
-                {learnLinks.map(link => (
-                  <a 
-                    key={link.href}
-                    href={link.href} 
-                    className="block p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.title}
-                  </a>
-                ))}
+                {learnLinks.map(link => {
+                  const section = link.href.substring(1);
+                  return (
+                    <a 
+                      key={link.href}
+                      href={link.href} 
+                      className={cn(
+                        "block p-2 rounded-md",
+                        isActive(section) 
+                          ? "navigation-active" 
+                          : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                      )}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(section);
+                      }}
+                    >
+                      {link.title}
+                    </a>
+                  );
+                })}
               </div>
             </div>
             
             <div className="py-2">
               <div 
-                className="flex justify-between items-center p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+                className={cn(
+                  "flex justify-between items-center p-3 rounded-md cursor-pointer",
+                  (isActive('no-code-ai') || isActive('ai-templates') || isActive('custom-models'))
+                    ? "navigation-active" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                )}
                 onClick={() => document.querySelector('#mobile-build')?.classList.toggle('hidden')}
               >
                 <span className="font-medium">Build</span>
                 <ChevronDown size={18} />
               </div>
               <div id="mobile-build" className="hidden ml-4 mt-1 space-y-1">
-                {buildLinks.map(link => (
-                  <a 
-                    key={link.href}
-                    href={link.href} 
-                    className="block p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.title}
-                  </a>
-                ))}
+                {buildLinks.map(link => {
+                  const section = link.href.substring(1);
+                  return (
+                    <a 
+                      key={link.href}
+                      href={link.href} 
+                      className={cn(
+                        "block p-2 rounded-md",
+                        isActive(section) 
+                          ? "navigation-active" 
+                          : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                      )}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(section);
+                      }}
+                    >
+                      {link.title}
+                    </a>
+                  );
+                })}
               </div>
             </div>
             
             <a 
               href="#resources" 
-              className="block p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-              onClick={() => setIsOpen(false)}
+              className={cn(
+                "block p-3 rounded-md",
+                isActive('resources') 
+                  ? "navigation-active" 
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              )}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('resources');
+              }}
             >
               Resources
             </a>
             
             <div className="pt-2 pb-3 space-y-2">
-              <Button variant="outline" className="w-full">Sign Up</Button>
-              <Button className="w-full bg-gradient hover:opacity-90">Get Started</Button>
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => window.location.href = "/signup"}
+              >
+                Sign Up
+              </Button>
+              <Button 
+                className="w-full bg-gradient hover:opacity-90"
+                onClick={() => {
+                  handleNavClick('ai-basics');
+                }}
+              >
+                Get Started
+              </Button>
             </div>
           </div>
         </div>
