@@ -1,3 +1,4 @@
+
 import React from 'react';
 import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
@@ -16,7 +17,9 @@ import {
   Puzzle, 
   Bot, 
   BookOpen,
-  Star 
+  Star,
+  Database,
+  Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 

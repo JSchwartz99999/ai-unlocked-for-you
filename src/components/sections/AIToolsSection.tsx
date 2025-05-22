@@ -9,7 +9,7 @@ import {
   FileText, 
   Code, 
   BarChart, 
-  MusicNote, 
+  Music, 
   Video 
 } from 'lucide-react';
 
@@ -80,7 +80,7 @@ const AIToolsSection: React.FC = () => {
       description: "Create and edit videos with AI-powered tools that simplify the production process."
     },
     {
-      icon: MusicNote,
+      icon: Music,
       title: "Audio Generator",
       description: "Generate voiceovers, sound effects, and background music for your content."
     }
