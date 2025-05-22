@@ -1,0 +1,24 @@
+
+/* Navigation menu active/hover styles */
+.navigation-active {
+  @apply bg-accent/20 text-accent font-medium;
+}
+
+.navigation-item:hover {
+  @apply bg-accent/10 text-accent transition-colors;
+}
+
+/* Improved card hover effects */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effects */
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
