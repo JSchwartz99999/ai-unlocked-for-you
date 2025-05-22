@@ -5,6 +5,9 @@ import FeatureCard from '@/components/FeatureCard';
 import AIPath from '@/components/AIPath';
 import InteractiveDemo from '@/components/InteractiveDemo';
 import Footer from '@/components/Footer';
+import AITemplatesSection from '@/components/sections/AITemplatesSection';
+import CustomModelsSection from '@/components/sections/CustomModelsSection';
+import AIToolsSection from '@/components/sections/AIToolsSection';
 import { 
   Brain, 
   Code, 
@@ -12,9 +15,6 @@ import {
   Users, 
   Puzzle, 
   Bot, 
-  Database,
-  Sparkles,
-  LineChart,
   BookOpen,
   Star 
 } from 'lucide-react';
@@ -255,50 +255,14 @@ const Index = () => {
           </div>
         </section>
         
-        {/* AI Templates Section */}
-        <section id="ai-templates" data-section="ai-templates" className="py-16 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-6 md:px-12">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <span>AI Templates</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready-to-Use AI Templates</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Get started quickly with our collection of pre-built AI solutions for common use cases.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* AI Templates Section - Using the new component */}
+        <AITemplatesSection />
         
-        {/* Custom Models Section */}
-        <section id="custom-models" data-section="custom-models" className="py-16 bg-gray-50 dark:bg-gray-800">
-          <div className="container mx-auto px-6 md:px-12">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <span>Custom Models</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Build Custom AI Solutions</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Create AI models tailored to your specific needs with our advanced customization tools.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Custom Models Section - Using the new component */}
+        <CustomModelsSection />
         
-        {/* AI Tools Section */}
-        <section id="ai-tools" data-section="ai-tools" className="py-16 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-6 md:px-12">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <span>AI Tools</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Essential AI Tools</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Discover the tools that make building and using AI accessible to everyone.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* AI Tools Section - Using the new component */}
+        <AIToolsSection />
         
         {/* Resources Section */}
         <section id="resources" data-section="resources" className="py-16 relative overflow-hidden bg-gray-50 dark:bg-gray-800">
