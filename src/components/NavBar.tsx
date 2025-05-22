@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -68,11 +67,17 @@ const NavBar: React.FC = () => {
     setActiveSection(section);
     setIsOpen(false); // Close mobile menu when clicking a nav item
     
-    // Smooth scroll to section if it exists
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Update URL hash first
+    window.location.hash = section;
+    
+    // Use setTimeout to ensure the hash change has time to process
+    setTimeout(() => {
+      // Smooth scroll to section if it exists
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 10);
   };
 
   return (
