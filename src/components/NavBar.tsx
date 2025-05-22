@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -64,20 +65,26 @@ const NavBar: React.FC = () => {
   };
 
   const handleNavClick = (section: string) => {
+    console.log("Navigation clicked for section:", section);
     setActiveSection(section);
     setIsOpen(false); // Close mobile menu when clicking a nav item
     
-    // Update URL hash first
-    window.location.hash = section;
+    // First update the URL hash without scrolling
+    const currentLocation = window.location.href.split('#')[0];
+    window.history.pushState(null, '', `${currentLocation}#${section}`);
     
-    // Use setTimeout to ensure the hash change has time to process
+    // Then handle the scrolling separately with a small delay
     setTimeout(() => {
-      // Smooth scroll to section if it exists
       const element = document.getElementById(section);
+      console.log("Looking for element with ID:", section);
+      console.log("Element found:", !!element);
+      
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.log("Element not found for section:", section);
       }
-    }, 10);
+    }, 50);
   };
 
   return (
@@ -354,3 +361,4 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
+
