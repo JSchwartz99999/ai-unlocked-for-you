@@ -8,6 +8,11 @@
     <!-- Performance hints -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preload" href="/src/styles/index.css" as="style" />
+    <link rel="prefetch" href="/src/components/Hero.tsx" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Primary Meta Tags -->
     <title>AIacademy - Learn AI Without Coding | Interactive AI Education Platform</title>
@@ -19,6 +24,10 @@
     <meta name="language" content="English" />
     <meta name="theme-color" content="#7c3aed" />
 
+    <!-- Performance and Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AIacademy" />

@@ -1,0 +1,67 @@
+
+{
+  "name": "AIacademy - Learn AI Without Coding",
+  "short_name": "AIacademy",
+  "description": "Master artificial intelligence through interactive learning experiences. No technical background required.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "platform": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI Basics",
+      "short_name": "Basics",
+      "description": "Learn AI fundamentals",
+      "url": "/#ai-basics",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Interactive Demo",
+      "short_name": "Demo",
+      "description": "Try AI tools",
+      "url": "/#demo",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
