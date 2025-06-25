@@ -1,7 +1,7 @@
 
 // Performance budget monitoring
 interface PerformanceBudget {
-  maxLoadTime: number; // in milliseconds
+  pageLoadTime: number; // Changed from maxLoadTime to pageLoadTime for consistency
   maxBundleSize: number; // in KB
   maxImageSize: number; // in KB
   maxLCP: number; // Largest Contentful Paint in milliseconds
@@ -10,7 +10,7 @@ interface PerformanceBudget {
 }
 
 const PERFORMANCE_BUDGET: PerformanceBudget = {
-  maxLoadTime: 3000, // 3 seconds
+  pageLoadTime: 3000, // 3 seconds
   maxBundleSize: 512, // 512KB
   maxImageSize: 200, // 200KB
   maxLCP: 2500, // 2.5 seconds
@@ -71,10 +71,10 @@ export const performanceBudget = {
   // Get performance score
   getPerformanceScore: () => {
     const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    const loadTime = navigation.loadEventEnd - navigation.fetchStart;
+    const pageLoadTime = navigation.loadEventEnd - navigation.fetchStart;
     
     const metrics = {
-      loadTime,
+      pageLoadTime, // Changed from loadTime to pageLoadTime
       // Add other metrics as they become available
     };
     
