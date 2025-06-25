@@ -17,7 +17,7 @@ import { imageOptimization } from "./lib/imageOptimization";
 import MonitoringDashboard from "./components/MonitoringDashboard";
 import { healthChecker } from "./lib/healthCheck";
 import { sessionTracker } from "./lib/sessionTracking";
-import { SEOManager } from "./lib/advancedSEO";
+import { SEOManager } from "./lib/seo";
 
 const queryClient = new QueryClient({
   defaultOptions: {
