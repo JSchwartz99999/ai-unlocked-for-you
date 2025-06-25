@@ -15,15 +15,19 @@ export const performanceMonitor = {
     // Track First Input Delay (FID)
     new PerformanceObserver((entryList) => {
       for (const entry of entryList.getEntries()) {
-        console.log('FID:', entry.processingStart - entry.startTime);
+        const fidEntry = entry as PerformanceEventTiming;
+        if (fidEntry.processingStart) {
+          console.log('FID:', fidEntry.processingStart - fidEntry.startTime);
+        }
       }
     }).observe({ entryTypes: ['first-input'] });
 
     // Track Cumulative Layout Shift (CLS)
     new PerformanceObserver((entryList) => {
       for (const entry of entryList.getEntries()) {
-        if (!entry.hadRecentInput) {
-          console.log('CLS:', entry.value);
+        const clsEntry = entry as any; // Using any type as LayoutShift is not in standard TypeScript definitions
+        if (clsEntry.hadRecentInput !== undefined && !clsEntry.hadRecentInput) {
+          console.log('CLS:', clsEntry.value);
         }
       }
     }).observe({ entryTypes: ['layout-shift'] });
