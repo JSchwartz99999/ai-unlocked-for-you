@@ -16,3 +16,6 @@
 
 /* Import utility helpers */
 @import './utils.css';
+
+/* Import performance optimizations */
+@import './performance.css';
