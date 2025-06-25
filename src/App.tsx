@@ -14,6 +14,10 @@ import { performanceBudget } from "./lib/performanceBudget";
 import { useAdvancedPerformance } from "./hooks/useAdvancedPerformance";
 import { resourceOptimization } from "./lib/resourceOptimization";
 import { imageOptimization } from "./lib/imageOptimization";
+import MonitoringDashboard from "./components/MonitoringDashboard";
+import { healthChecker } from "./lib/healthCheck";
+import { sessionTracker } from "./lib/sessionTracking";
+import { SEOManager } from "./lib/advancedSEO";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -80,6 +84,49 @@ const AppContent = () => {
     
     checkMaintenanceMode();
     
+    // Initialize advanced features
+    sessionTracker.trackPageView();
+    
+    // Initialize SEO manager
+    const seoManager = new SEOManager({
+      title: document.title,
+      description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+      keywords: ['AI', 'learning', 'education', 'artificial intelligence', 'no-code'],
+      canonicalUrl: window.location.href,
+      ogImage: 'https://lovable.dev/opengraph-image-p98pqg.png',
+      ogType: 'website',
+      twitterCard: 'summary_large_image'
+    });
+
+    // Run health checks
+    const runHealthChecks = async () => {
+      const results = await healthChecker.runAllChecks();
+      const systemMetrics = await healthChecker.getSystemMetrics();
+      const overallHealth = healthChecker.getOverallHealth(results);
+      
+      console.log('Health Check Results:', {
+        overall: overallHealth,
+        checks: results,
+        metrics: systemMetrics
+      });
+
+      // Track health status
+      analytics.track({
+        name: 'health_check',
+        properties: {
+          status: overallHealth,
+          checkCount: results.length,
+          systemMetrics
+        }
+      });
+    };
+
+    // Run initial health check
+    runHealthChecks();
+
+    // Set up periodic health checks
+    const healthCheckInterval = setInterval(runHealthChecks, 5 * 60 * 1000); // Every 5 minutes
+
     // Performance monitoring with enhanced tracking
     const performanceTimer = setTimeout(() => {
       const score = performanceBudget.getPerformanceScore();
@@ -103,6 +150,7 @@ const AppContent = () => {
 
     return () => {
       clearTimeout(performanceTimer);
+      clearInterval(healthCheckInterval);
     };
   }, [metrics]);
 
@@ -123,6 +171,7 @@ const AppContent = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
+          <MonitoringDashboard />
         </TooltipProvider>
       </QueryClientProvider>
     </>
