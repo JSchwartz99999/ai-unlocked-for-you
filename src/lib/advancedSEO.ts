@@ -84,7 +84,7 @@ class SEOManager {
   }
 
   private setStructuredData(data: any): void {
-    let script = document.querySelector('script[type="application/ld+json"]');
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
     if (!script) {
       script = document.createElement('script');
       script.type = 'application/ld+json';
