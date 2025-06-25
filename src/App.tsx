@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -87,11 +86,10 @@ const AppContent = () => {
       analytics.trackPerformance({
         ...score.metrics,
         performanceScore: score.score,
-        webVitalsLCP: metrics.LCP,
-        webVitalsFID: metrics.FID,
-        webVitalsCLS: metrics.CLS,
-        webVitalsFCP: metrics.FCP,
-        webVitalsTTFB: metrics.TTFB
+        largestContentfulPaint: metrics.LCP,
+        firstInputDelay: metrics.FID,
+        cumulativeLayoutShift: metrics.CLS,
+        firstContentfulPaint: metrics.FCP
       });
 
       // Log performance summary
