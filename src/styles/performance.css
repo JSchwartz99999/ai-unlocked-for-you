@@ -1,7 +1,14 @@
 
 /* Performance optimizations */
 
-/* Optimize font loading */
+/* Critical CSS - Above the fold content */
+.critical-path {
+  /* Inline critical styles for above-the-fold content */
+  contain: layout style paint;
+  will-change: auto;
+}
+
+/* Optimize font loading with font-display swap */
 @font-face {
   font-display: swap; /* Ensures text is visible during font load */
 }
@@ -12,11 +19,17 @@ img {
   contain: layout style paint;
 }
 
-/* Lazy loading placeholder */
+/* Enhanced lazy loading with better UX */
 .lazy {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
+  min-height: 200px; /* Prevent layout shift */
+}
+
+.lazy.loaded {
+  background: none;
+  animation: none;
 }
 
 @keyframes loading {
@@ -33,6 +46,13 @@ img {
   scroll-behavior: smooth;
 }
 
+/* GPU acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 /* Optimize animations for reduced motion users */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -41,6 +61,7 @@ img {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -54,6 +75,50 @@ img {
   will-change: transform, opacity;
 }
 
-.animate-element:not(:hover):not(:focus) {
+.animate-element:not(:hover):not(:focus):not(.animating) {
   will-change: auto;
+}
+
+/* Resource hints optimization */
+.preload-hint::before {
+  content: '';
+  display: none;
+  background-image: url('/placeholder.svg');
+}
+
+/* Optimize text rendering */
+.optimized-text {
+  text-rendering: optimizeSpeed;
+  font-smooth: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+/* Better focus management for accessibility and performance */
+.focus-optimized:focus {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* Optimize large content areas */
+.content-optimized {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px;
+}
+
+/* Performance-optimized gradients */
+.performance-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  will-change: transform;
+}
+
+/* Optimize button interactions */
+.performance-button {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform;
+}
+
+.performance-button:active {
+  transform: translateY(1px);
 }
