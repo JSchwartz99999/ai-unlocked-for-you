@@ -1,4 +1,3 @@
-
 // Analytics and monitoring utilities
 interface AnalyticsEvent {
   name: string;
@@ -12,6 +11,7 @@ interface PerformanceMetrics {
   largestContentfulPaint: number;
   cumulativeLayoutShift: number;
   firstInputDelay: number;
+  performanceScore?: number; // Added this property
 }
 
 export const analytics = {

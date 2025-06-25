@@ -55,7 +55,9 @@ export const webVitals = {
     const observer = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       entries.forEach((entry) => {
-        const fid = entry.processingStart - entry.startTime;
+        // Type assertion to access processingStart property
+        const fidEntry = entry as PerformanceEventTiming;
+        const fid = fidEntry.processingStart - fidEntry.startTime;
         callback({
           name: 'FID',
           value: fid,
