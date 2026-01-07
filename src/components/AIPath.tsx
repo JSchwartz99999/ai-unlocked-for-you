@@ -82,7 +82,11 @@ const AIPath: React.FC = () => {
           />
           
           <div className="flex justify-center pt-10 relative z-10">
-            <Button size="lg" className="bg-gradient hover:opacity-90 text-base">
+            <Button
+              size="lg"
+              className="bg-gradient hover:opacity-90 text-base"
+              onClick={() => document.getElementById('ai-basics')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Begin Your Journey
             </Button>
           </div>
