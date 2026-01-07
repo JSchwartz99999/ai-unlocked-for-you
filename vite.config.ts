@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use BASE_URL env var for GitHub Pages, or '/' for local dev
-  base: process.env.BASE_URL || '/',
+  // Set base path for GitHub Pages deployment
+  base: '/ai-unlocked-for-you/',
   server: {
     host: "::",
     port: 8080,
