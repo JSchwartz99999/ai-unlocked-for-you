@@ -26,15 +26,24 @@ const Hero: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Demystifying <span className="text-gradient">AI</span> for Everyone
             </h1>
-            <p className="text-lg md:text-xl text-[var(--text-[var(--accent-hover)])] mb-8 max-w-lg mx-auto md:mx-0">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-8 max-w-lg mx-auto md:mx-0">
               Learn how AI works, build your own models, and incorporate AI into your life - 
               no technical background required.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-              <Button size="lg" className="bg-gradient hover:opacity-90 gap-2 text-base">
+              <Button
+                size="lg"
+                className="bg-gradient hover:opacity-90 gap-2 text-base btn-glow"
+                onClick={() => document.getElementById('ai-basics')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Start Learning <ArrowRight className="h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 text-base">
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 text-base"
+                onClick={() => document.getElementById('resources')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Explore Resources
               </Button>
             </div>

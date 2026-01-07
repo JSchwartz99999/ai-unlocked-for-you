@@ -39,7 +39,7 @@ const Index = () => {
                 <span>Key Features</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Learn AI With Us?</h2>
-              <p className="text-[var(--text-[var(--accent-hover)])] max-w-2xl mx-auto">
+              <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
                 Our interactive approach makes complex AI concepts easy to understand and apply, 
                 without requiring advanced technical skills.
               </p>
@@ -94,7 +94,7 @@ const Index = () => {
                   <Users className="h-6 w-6 text-[var(--accent-default)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">50K+</h3>
-                <p className="text-[var(--text-[var(--accent-hover)])]">Active Learners</p>
+                <p className="text-[var(--text-secondary)]">Active Learners</p>
               </div>
               
               <div className="p-6">
@@ -102,7 +102,7 @@ const Index = () => {
                   <BookOpen className="h-6 w-6 text-[var(--accent-hover)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">200+</h3>
-                <p className="text-[var(--text-[var(--accent-hover)])]">Lessons & Tutorials</p>
+                <p className="text-[var(--text-secondary)]">Lessons & Tutorials</p>
               </div>
               
               <div className="p-6">
@@ -110,7 +110,7 @@ const Index = () => {
                   <Code className="h-6 w-6 text-[var(--accent-default)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">100+</h3>
-                <p className="text-[var(--text-[var(--accent-hover)])]">AI Projects</p>
+                <p className="text-[var(--text-secondary)]">AI Projects</p>
               </div>
               
               <div className="p-6">
@@ -118,7 +118,7 @@ const Index = () => {
                   <Star className="h-6 w-6 text-[var(--accent-hover)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">4.9</h3>
-                <p className="text-[var(--text-[var(--accent-hover)])]">User Rating</p>
+                <p className="text-[var(--text-secondary)]">User Rating</p>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Index = () => {
                 <span>Testimonials</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Students Say</h2>
-              <p className="text-[var(--text-[var(--accent-hover)])] max-w-2xl mx-auto">
+              <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
                 Read about the experiences of people who have transformed their understanding of AI through our platform.
               </p>
             </div>
@@ -150,7 +150,7 @@ const Index = () => {
                     <p className="text-sm text-[var(--text-tertiary)]">Marketing Manager</p>
                   </div>
                 </div>
-                <p className="text-[var(--text-[var(--accent-hover)])]">
+                <p className="text-[var(--text-secondary)]">
                   "I was intimidated by AI before, but this platform made it so approachable! Now I use AI tools daily in my marketing strategy with confidence."
                 </p>
                 <div className="mt-4 flex text-yellow-400">
@@ -170,7 +170,7 @@ const Index = () => {
                     <p className="text-sm text-[var(--text-tertiary)]">Small Business Owner</p>
                   </div>
                 </div>
-                <p className="text-[var(--text-[var(--accent-hover)])]">
+                <p className="text-[var(--text-secondary)]">
                   "The no-code AI project builder was a game-changer for my business. I created a customer service bot that saves me hours every week!"
                 </p>
                 <div className="mt-4 flex text-yellow-400">
@@ -190,7 +190,7 @@ const Index = () => {
                     <p className="text-sm text-[var(--text-tertiary)]">Teacher</p>
                   </div>
                 </div>
-                <p className="text-[var(--text-[var(--accent-hover)])]">
+                <p className="text-[var(--text-secondary)]">
                   "I'm using what I learned to teach my students about AI in a way that's fun and accessible. The interactive demos are perfect for classroom use!"
                 </p>
                 <div className="mt-4 flex text-yellow-400">
@@ -213,7 +213,7 @@ const Index = () => {
                 <span>No-Code AI</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Build AI Without Writing Code</h2>
-              <p className="text-[var(--text-[var(--accent-hover)])] max-w-2xl mx-auto">
+              <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
                 Our platform makes it easy to create powerful AI solutions without any programming knowledge.
               </p>
             </div>
@@ -221,7 +221,7 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Drag-and-Drop AI Builder</h3>
-                <p className="text-[var(--text-[var(--accent-hover)])] mb-6">
+                <p className="text-[var(--text-secondary)] mb-6">
                   With our intuitive interface, you can create custom AI models by simply dragging and dropping components.
                   No technical expertise required.
                 </p>
@@ -281,21 +281,23 @@ const Index = () => {
               <span>Get Started Today</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
-            <p className="text-lg text-[var(--text-[var(--accent-hover)])] mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
               Join thousands of non-technical learners who are successfully building and using AI.
               Your journey to AI literacy starts here.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient hover:opacity-90 text-base"
+                onClick={() => document.getElementById('ai-basics')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Started for Free
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="text-base"
+                onClick={() => document.getElementById('no-code-ai')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Course Catalog
               </Button>
