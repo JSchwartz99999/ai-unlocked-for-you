@@ -21,11 +21,11 @@ const TemplateCard: React.FC<TemplateCardProps> = ({
 }) => {
   return (
     <Card className="p-6 hover-lift border border-gray-200 dark:border-gray-800 h-full flex flex-col">
-      <div className="mb-4 p-3 rounded-full bg-primary/10 w-fit">
-        <Icon className="h-6 w-6 text-primary" />
+      <div className="mb-4 p-3 rounded-full bg-[var(--accent-bg)] w-fit">
+        <Icon className="h-6 w-6 text-[var(--accent-default)]" />
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{description}</p>
+      <p className="text-[var(--text-secondary)] mb-4 flex-grow">{description}</p>
       <div className="flex items-center justify-between mt-2">
         <div className="flex items-center space-x-2">
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
@@ -94,14 +94,14 @@ const AITemplatesSection: React.FC = () => {
   ];
 
   return (
-    <section id="ai-templates" data-section="ai-templates" className="py-16 bg-white dark:bg-gray-900">
+    <section id="ai-templates" data-section="ai-templates" className="py-16 bg-[var(--surface-0)]">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+          <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
             <span>AI Templates</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready-to-Use AI Templates</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
             Get started quickly with our collection of pre-built AI solutions for common use cases.
             Just choose a template and customize it to your needs.
           </p>

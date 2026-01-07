@@ -1,14 +1,19 @@
-
 import React from 'react';
 
 const Brand: React.FC = () => {
   return (
     <div className="flex items-center">
-      <a href="/" className="flex items-center">
-        <div className="w-10 h-10 rounded-full bg-gradient animate-gradient flex items-center justify-center">
-          <span className="text-white font-bold">AI</span>
+      <a
+        href="/"
+        className="flex items-center transition-opacity duration-150 hover:opacity-80"
+        aria-label="AI Academy Home"
+      >
+        <div className="w-10 h-10 rounded-full bg-gradient flex items-center justify-center shadow-md">
+          <span className="text-[var(--text-inverse)] font-bold text-sm">AI</span>
         </div>
-        <span className="ml-3 text-xl font-bold text-gray-900 dark:text-white">AIacademy</span>
+        <span className="ml-4 text-xl font-semibold text-[var(--text-primary)]">
+          AI Academy
+        </span>
       </a>
     </div>
   );

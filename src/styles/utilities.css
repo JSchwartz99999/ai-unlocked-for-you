@@ -1,22 +1,57 @@
-
 @layer utilities {
+  /* Teal gradient for text */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
   }
-  
+
+  /* Teal gradient for backgrounds */
   .bg-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary;
+    background-image: var(--gradient-accent);
   }
-  
+
+  /* Vibrant gradient (teal to purple) */
+  .bg-gradient-vibrant {
+    background-image: var(--gradient-accent-vibrant);
+  }
+
+  /* Surface gradient for sections */
+  .bg-gradient-surface {
+    background-image: var(--gradient-surface);
+  }
+
   .animation-delay-2000 {
     animation-delay: 2s;
   }
-  
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
-  
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Button glow effect */
+  .btn-glow:hover {
+    box-shadow: var(--shadow-glow-accent);
+  }
+
+  /* Glass effect */
+  .glass-effect {
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }

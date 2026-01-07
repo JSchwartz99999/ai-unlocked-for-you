@@ -32,14 +32,14 @@ const Index = () => {
         <Hero />
         
         {/* Features Section */}
-        <section id="ai-basics" data-section="ai-basics" className="py-20 bg-white dark:bg-gray-900">
+        <section id="ai-basics" data-section="ai-basics" className="py-20 bg-[var(--surface-0)]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
                 <span>Key Features</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Learn AI With Us?</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="text-[var(--text-[var(--accent-hover)])] max-w-2xl mx-auto">
                 Our interactive approach makes complex AI concepts easy to understand and apply, 
                 without requiring advanced technical skills.
               </p>
@@ -86,39 +86,39 @@ const Index = () => {
         </section>
         
         {/* Stats Section */}
-        <section id="ml-intro" data-section="ml-intro" className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section id="ml-intro" data-section="ml-intro" className="py-16 bg-[var(--surface-1)]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="p-6">
-                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-primary/10">
-                  <Users className="h-6 w-6 text-primary" />
+                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-[var(--accent-bg)]">
+                  <Users className="h-6 w-6 text-[var(--accent-default)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">50K+</h3>
-                <p className="text-gray-600 dark:text-gray-300">Active Learners</p>
+                <p className="text-[var(--text-[var(--accent-hover)])]">Active Learners</p>
               </div>
               
               <div className="p-6">
-                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-secondary/10">
-                  <BookOpen className="h-6 w-6 text-secondary" />
+                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-[var(--accent-bg)]">
+                  <BookOpen className="h-6 w-6 text-[var(--accent-hover)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">200+</h3>
-                <p className="text-gray-600 dark:text-gray-300">Lessons & Tutorials</p>
+                <p className="text-[var(--text-[var(--accent-hover)])]">Lessons & Tutorials</p>
               </div>
               
               <div className="p-6">
-                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
+                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-[var(--accent-bg)]">
+                  <Code className="h-6 w-6 text-[var(--accent-default)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">100+</h3>
-                <p className="text-gray-600 dark:text-gray-300">AI Projects</p>
+                <p className="text-[var(--text-[var(--accent-hover)])]">AI Projects</p>
               </div>
               
               <div className="p-6">
-                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-secondary/10">
-                  <Star className="h-6 w-6 text-secondary" />
+                <div className="inline-flex items-center justify-center p-4 mb-4 rounded-full bg-[var(--accent-bg)]">
+                  <Star className="h-6 w-6 text-[var(--accent-hover)]" />
                 </div>
                 <h3 className="text-4xl font-bold mb-2">4.9</h3>
-                <p className="text-gray-600 dark:text-gray-300">User Rating</p>
+                <p className="text-[var(--text-[var(--accent-hover)])]">User Rating</p>
               </div>
             </div>
           </div>
@@ -129,28 +129,28 @@ const Index = () => {
         <InteractiveDemo />
         
         {/* Testimonials Section */}
-        <section id="neural-networks" data-section="neural-networks" className="py-16 bg-white dark:bg-gray-900">
+        <section id="neural-networks" data-section="neural-networks" className="py-16 bg-[var(--surface-0)]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
                 <span>Testimonials</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Students Say</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="text-[var(--text-[var(--accent-hover)])] max-w-2xl mx-auto">
                 Read about the experiences of people who have transformed their understanding of AI through our platform.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+              <div className="bg-[var(--surface-1)] p-6 rounded-xl border border-[var(--border-default)]">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-full bg-gradient text-white flex items-center justify-center font-bold">KL</div>
                   <div className="ml-4">
                     <h4 className="font-semibold">Karen L.</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Marketing Manager</p>
+                    <p className="text-sm text-[var(--text-tertiary)]">Marketing Manager</p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-[var(--text-[var(--accent-hover)])]">
                   "I was intimidated by AI before, but this platform made it so approachable! Now I use AI tools daily in my marketing strategy with confidence."
                 </p>
                 <div className="mt-4 flex text-yellow-400">
@@ -162,15 +162,15 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+              <div className="bg-[var(--surface-1)] p-6 rounded-xl border border-[var(--border-default)]">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-full bg-gradient text-white flex items-center justify-center font-bold">JS</div>
                   <div className="ml-4">
                     <h4 className="font-semibold">James S.</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Small Business Owner</p>
+                    <p className="text-sm text-[var(--text-tertiary)]">Small Business Owner</p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-[var(--text-[var(--accent-hover)])]">
                   "The no-code AI project builder was a game-changer for my business. I created a customer service bot that saves me hours every week!"
                 </p>
                 <div className="mt-4 flex text-yellow-400">
@@ -182,15 +182,15 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+              <div className="bg-[var(--surface-1)] p-6 rounded-xl border border-[var(--border-default)]">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-full bg-gradient text-white flex items-center justify-center font-bold">MT</div>
                   <div className="ml-4">
                     <h4 className="font-semibold">Maria T.</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Teacher</p>
+                    <p className="text-sm text-[var(--text-tertiary)]">Teacher</p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-[var(--text-[var(--accent-hover)])]">
                   "I'm using what I learned to teach my students about AI in a way that's fun and accessible. The interactive demos are perfect for classroom use!"
                 </p>
                 <div className="mt-4 flex text-yellow-400">
@@ -206,14 +206,14 @@ const Index = () => {
         </section>
         
         {/* No-Code AI Section */}
-        <section id="no-code-ai" data-section="no-code-ai" className="py-16 bg-gray-100 dark:bg-gray-800">
+        <section id="no-code-ai" data-section="no-code-ai" className="py-16 bg-[var(--surface-2)]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
                 <span>No-Code AI</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Build AI Without Writing Code</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="text-[var(--text-[var(--accent-hover)])] max-w-2xl mx-auto">
                 Our platform makes it easy to create powerful AI solutions without any programming knowledge.
               </p>
             </div>
@@ -221,36 +221,36 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Drag-and-Drop AI Builder</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-[var(--text-[var(--accent-hover)])] mb-6">
                   With our intuitive interface, you can create custom AI models by simply dragging and dropping components.
                   No technical expertise required.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center">
-                    <div className="mr-2 bg-primary/10 p-1 rounded-full">
-                      <Sparkles className="h-4 w-4 text-primary" />
+                    <div className="mr-2 bg-[var(--accent-bg)] p-1 rounded-full">
+                      <Sparkles className="h-4 w-4 text-[var(--accent-default)]" />
                     </div>
                     <span>Visual workflow editor</span>
                   </li>
                   <li className="flex items-center">
-                    <div className="mr-2 bg-primary/10 p-1 rounded-full">
-                      <Sparkles className="h-4 w-4 text-primary" />
+                    <div className="mr-2 bg-[var(--accent-bg)] p-1 rounded-full">
+                      <Sparkles className="h-4 w-4 text-[var(--accent-default)]" />
                     </div>
                     <span>Pre-built components</span>
                   </li>
                   <li className="flex items-center">
-                    <div className="mr-2 bg-primary/10 p-1 rounded-full">
-                      <Sparkles className="h-4 w-4 text-primary" />
+                    <div className="mr-2 bg-[var(--accent-bg)] p-1 rounded-full">
+                      <Sparkles className="h-4 w-4 text-[var(--accent-default)]" />
                     </div>
                     <span>One-click deployment</span>
                   </li>
                 </ul>
               </div>
-              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-                <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg mb-4 flex items-center justify-center">
+              <div className="bg-[var(--surface-0)] p-6 rounded-xl shadow-lg">
+                <div className="aspect-video bg-[var(--surface-3)] rounded-lg mb-4 flex items-center justify-center">
                   <Database className="h-16 w-16 text-gray-400" />
                 </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-[var(--text-tertiary)]">
                   Interactive demo placeholder - No-Code AI Builder
                 </p>
               </div>
@@ -268,7 +268,7 @@ const Index = () => {
         <AIToolsSection />
         
         {/* Resources Section */}
-        <section id="resources" data-section="resources" className="py-16 relative overflow-hidden bg-gray-50 dark:bg-gray-800">
+        <section id="resources" data-section="resources" className="py-16 relative overflow-hidden bg-[var(--surface-1)]">
           {/* Background decorations */}
           <div aria-hidden="true" className="absolute inset-0">
             <div className="absolute top-0 left-0 -translate-y-12 translate-x-12 blur-3xl opacity-20 w-96 h-96 bg-gradient"></div>
@@ -276,12 +276,12 @@ const Index = () => {
           </div>
           
           <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+            <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
               <Sparkles className="h-4 w-4 mr-2" />
               <span>Get Started Today</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[var(--text-[var(--accent-hover)])] mb-8 max-w-2xl mx-auto">
               Join thousands of non-technical learners who are successfully building and using AI.
               Your journey to AI literacy starts here.
             </p>

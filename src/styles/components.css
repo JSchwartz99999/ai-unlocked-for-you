@@ -1,24 +1,90 @@
-
 /* Navigation menu active/hover styles */
 .navigation-active {
-  @apply bg-accent/20 text-accent font-medium;
+  background-color: var(--accent-bg);
+  color: var(--accent-default);
+  font-weight: 500;
 }
 
 .navigation-item:hover {
-  @apply bg-accent/10 text-accent transition-colors;
+  background-color: var(--accent-bg);
+  color: var(--accent-default);
+  transition: all var(--duration-normal) var(--ease-out);
 }
 
 /* Improved card hover effects */
 .hover-lift {
-  @apply transition-all duration-300;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
 
 .hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Button hover effects */
 .btn-glow:hover {
-  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  box-shadow: var(--shadow-glow-accent);
+}
+
+/* Button active state */
+.btn-active:active {
+  transform: scale(0.98);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--border-default);
+}
+
+.card-interactive:hover {
+  background-color: var(--surface-3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Input styles */
+.input-dark {
+  background-color: var(--surface-2);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.input-dark::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input-dark:hover {
+  border-color: var(--border-strong);
+}
+
+.input-dark:focus {
+  outline: none;
+  border-color: var(--accent-default);
+  box-shadow: var(--shadow-ring-accent);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-full);
+}
+
+.badge-accent {
+  background-color: var(--accent-bg);
+  color: var(--accent-default);
 }

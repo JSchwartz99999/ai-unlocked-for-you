@@ -27,7 +27,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-lg z-50">
+    <div className="md:hidden absolute top-full left-0 right-0 bg-[var(--surface-1)] border-b border-[var(--border-default)] shadow-lg z-50">
       <div className="px-4 py-2 space-y-1">
         <div className="py-2">
           <div 
@@ -35,7 +35,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
               "flex justify-between items-center p-3 rounded-md cursor-pointer",
               (isActive('ai-basics') || isActive('ml-intro') || 
                isActive('neural-networks') || isActive('ai-tools')) 
-                ? "navigation-active" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                ? "navigation-active" : "hover:bg-[var(--surface-3)]"
             )}
             onClick={() => document.querySelector('#mobile-learn')?.classList.toggle('hidden')}
           >
@@ -53,7 +53,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
                     "block p-2 rounded-md",
                     isActive(section) 
                       ? "navigation-active" 
-                      : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                      : "hover:bg-[var(--surface-3)]"
                   )}
                   onClick={(e) => {
                     e.preventDefault();
@@ -72,7 +72,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
             className={cn(
               "flex justify-between items-center p-3 rounded-md cursor-pointer",
               (isActive('no-code-ai') || isActive('ai-templates') || isActive('custom-models'))
-                ? "navigation-active" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                ? "navigation-active" : "hover:bg-[var(--surface-3)]"
             )}
             onClick={() => document.querySelector('#mobile-build')?.classList.toggle('hidden')}
           >
@@ -90,7 +90,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
                     "block p-2 rounded-md",
                     isActive(section) 
                       ? "navigation-active" 
-                      : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                      : "hover:bg-[var(--surface-3)]"
                   )}
                   onClick={(e) => {
                     e.preventDefault();
@@ -110,7 +110,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
             "block p-3 rounded-md",
             isActive('resources') 
               ? "navigation-active" 
-              : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              : "hover:bg-[var(--surface-3)]"
           )}
           onClick={(e) => {
             e.preventDefault();

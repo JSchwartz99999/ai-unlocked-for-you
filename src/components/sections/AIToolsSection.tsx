@@ -22,18 +22,18 @@ interface ToolCardProps {
 
 const ToolCard: React.FC<ToolCardProps> = ({ icon: Icon, title, description, isPopular }) => {
   return (
-    <div className="group relative bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800 hover:border-primary/40 dark:hover:border-primary/40">
+    <div className="group relative bg-[var(--surface-0)] p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800 hover:border-primary/40 dark:hover:border-primary/40">
       {isPopular && (
         <div className="absolute -top-3 -right-3 px-3 py-1 bg-gradient text-white text-xs font-medium rounded-full">
           Popular
         </div>
       )}
-      <div className="mb-4 p-3 rounded-full bg-primary/10 w-fit">
-        <Icon className="h-6 w-6 text-primary" />
+      <div className="mb-4 p-3 rounded-full bg-[var(--accent-bg)] w-fit">
+        <Icon className="h-6 w-6 text-[var(--accent-default)]" />
       </div>
-      <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
-      <Button variant="outline" size="sm" className="group-hover:border-primary group-hover:text-primary transition-colors">
+      <h3 className="text-xl font-semibold mb-2 group-hover:text-[var(--accent-default)] transition-colors">{title}</h3>
+      <p className="text-[var(--text-secondary)] mb-4">{description}</p>
+      <Button variant="outline" size="sm" className="group-hover:border-primary group-hover:text-[var(--accent-default)] transition-colors">
         Try Now
       </Button>
     </div>
@@ -87,15 +87,15 @@ const AIToolsSection: React.FC = () => {
   ];
 
   return (
-    <section id="ai-tools" data-section="ai-tools" className="py-16 bg-white dark:bg-gray-900">
+    <section id="ai-tools" data-section="ai-tools" className="py-16 bg-[var(--surface-0)]">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+          <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
             <Sparkles className="h-4 w-4 mr-2" />
             <span>AI Tools</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Essential AI Tools</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
             Discover the tools that make building and using AI accessible to everyone.
             No technical expertise required.
           </p>
@@ -114,7 +114,7 @@ const AIToolsSection: React.FC = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-[var(--text-secondary)] mb-6">
             All tools include free starter plans with upgrade options for professional use
           </p>
           <Button className="bg-gradient hover:opacity-90">

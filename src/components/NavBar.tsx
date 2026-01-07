@@ -18,8 +18,8 @@ const NavBar: React.FC = () => {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled 
-          ? "backdrop-blur-md bg-white/90 dark:bg-gray-900/90 shadow-sm border-b border-gray-200 dark:border-gray-800" 
-          : "bg-white/80 dark:bg-gray-900/80"
+          ? "backdrop-blur-md glass-effect shadow-sm border-b border-[var(--border-default)]" 
+          : "bg-[var(--surface-0)]/80"
       )}
     >
       <div className="container px-4 py-3 mx-auto flex items-center justify-between">
@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
-            className="p-2 rounded-md text-gray-600 hover:text-accent hover:bg-gray-100"
+            className="p-2 rounded-md text-[var(--text-secondary)] hover:text-accent hover:bg-[var(--surface-3)]"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

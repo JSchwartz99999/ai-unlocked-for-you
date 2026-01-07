@@ -9,11 +9,11 @@ const InteractiveDemo: React.FC = () => {
   const [activeDemo, setActiveDemo] = useState('chat');
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900" id="build">
+    <section className="py-16 bg-[var(--surface-0)]" id="build">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Try AI in Action</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
             Experience how AI works with these interactive examples. No coding required.
           </p>
         </div>
@@ -35,7 +35,7 @@ const InteractiveDemo: React.FC = () => {
               </TabsTrigger>
             </TabsList>
             
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div className="bg-[var(--surface-2)] rounded-lg shadow-lg border border-[var(--border-default)] overflow-hidden">
               <TabsContent value="chat" className="m-0">
                 <Card className="border-0 shadow-none">
                   <CardHeader>
@@ -55,7 +55,7 @@ const InteractiveDemo: React.FC = () => {
                         </div>
                       </div>
                       <div className="flex gap-3 mb-4 justify-end">
-                        <div className="bg-primary/10 p-3 rounded-lg max-w-[80%]">
+                        <div className="bg-[var(--accent-bg)] p-3 rounded-lg max-w-[80%]">
                           <p className="text-sm">Can you explain how neural networks work in simple terms?</p>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
@@ -107,7 +107,7 @@ const InteractiveDemo: React.FC = () => {
                       Generate Text
                     </Button>
                     <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg min-h-[100px]">
-                      <p className="text-gray-500 dark:text-gray-400 text-sm italic">Generated text will appear here...</p>
+                      <p className="text-[var(--text-tertiary)] text-sm italic">Generated text will appear here...</p>
                     </div>
                   </CardContent>
                 </Card>

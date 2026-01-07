@@ -5,7 +5,7 @@ import { ArrowRight, Brain, Code, Users, Sparkles } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative overflow-hidden bg-white dark:bg-gray-900 pt-20 pb-32">
+    <div className="relative overflow-hidden  pt-20 pb-32">
       {/* Background decorations */}
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 overflow-hidden">
@@ -20,13 +20,13 @@ const Hero: React.FC = () => {
           {/* Left content */}
           <div className="w-full md:w-1/2 pt-12 md:pt-0 text-center md:text-left">
             <div className="inline-flex items-center mb-6 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 mr-2 text-primary" />
+              <Sparkles className="h-4 w-4 mr-2 text-[var(--accent-default)]" />
               <span className="text-sm font-medium">No technical background required</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Demystifying <span className="text-gradient">AI</span> for Everyone
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+            <p className="text-lg md:text-xl text-[var(--text-[var(--accent-hover)])] mb-8 max-w-lg mx-auto md:mx-0">
               Learn how AI works, build your own models, and incorporate AI into your life - 
               no technical background required.
             </p>
@@ -41,22 +41,22 @@ const Hero: React.FC = () => {
             
             <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800 hidden md:flex flex-wrap gap-6 justify-center md:justify-start">
               <div className="flex items-center gap-2">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="font-bold text-primary">50K+</span>
+                <div className="w-12 h-12 rounded-full bg-[var(--accent-bg)] flex items-center justify-center">
+                  <span className="font-bold text-[var(--accent-default)]">50K+</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Active Learners</p>
+                <p className="text-sm text-[var(--text-tertiary)]">Active Learners</p>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
-                  <span className="font-bold text-secondary">100+</span>
+                <div className="w-12 h-12 rounded-full bg-[var(--accent-bg)] flex items-center justify-center">
+                  <span className="font-bold text-[var(--accent-hover)]">100+</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">AI Projects</p>
+                <p className="text-sm text-[var(--text-tertiary)]">AI Projects</p>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="font-bold text-primary">4.9</span>
+                <div className="w-12 h-12 rounded-full bg-[var(--accent-bg)] flex items-center justify-center">
+                  <span className="font-bold text-[var(--accent-default)]">4.9</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">User Rating</p>
+                <p className="text-sm text-[var(--text-tertiary)]">User Rating</p>
               </div>
             </div>
           </div>
@@ -65,21 +65,21 @@ const Hero: React.FC = () => {
           <div className="w-full md:w-1/2 relative mt-12 md:mt-0">
             <div className="h-64 md:h-96 relative">
               {/* Brain Icon */}
-              <div className="absolute top-0 left-1/4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl animate-float border border-gray-100 dark:border-gray-700">
+              <div className="absolute top-0 left-1/4 p-4 bg-[var(--surface-2)] rounded-xl shadow-xl animate-float border border-[var(--border-default)]">
                 <div className="relative">
                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
-                  <Brain className="h-10 w-10 text-primary" />
+                  <Brain className="h-10 w-10 text-[var(--accent-default)]" />
                 </div>
               </div>
               
               {/* Code Icon */}
-              <div className="absolute bottom-0 left-1/3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl animate-float animation-delay-2000 border border-gray-100 dark:border-gray-700">
-                <Code className="h-10 w-10 text-secondary" />
+              <div className="absolute bottom-0 left-1/3 p-4 bg-[var(--surface-2)] rounded-xl shadow-xl animate-float animation-delay-2000 border border-[var(--border-default)]">
+                <Code className="h-10 w-10 text-[var(--accent-hover)]" />
               </div>
               
               {/* Users Icon */}
-              <div className="absolute top-1/3 right-1/4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl animate-float animation-delay-4000 border border-gray-100 dark:border-gray-700">
-                <Users className="h-10 w-10 text-primary" />
+              <div className="absolute top-1/3 right-1/4 p-4 bg-[var(--surface-2)] rounded-xl shadow-xl animate-float animation-delay-4000 border border-[var(--border-default)]">
+                <Users className="h-10 w-10 text-[var(--accent-default)]" />
               </div>
               
               {/* Central Circle */}

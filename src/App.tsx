@@ -93,7 +93,7 @@ const AppContent = () => {
       description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
       keywords: ['AI', 'learning', 'education', 'artificial intelligence', 'no-code'],
       canonicalUrl: window.location.href,
-      ogImage: 'https://lovable.dev/opengraph-image-p98pqg.png',
+      ogImage: '/ai-unlocked-for-you/og-image.png',
       ogType: 'website',
       twitterCard: 'summary_large_image'
     });

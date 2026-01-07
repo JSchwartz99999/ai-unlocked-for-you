@@ -17,14 +17,14 @@ const PathStep: React.FC<PathStepProps> = ({ number, title, description, icon })
         {number}
       </div>
     </div>
-    <div className="flex-1 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+    <div className="flex-1 bg-[var(--surface-2)] rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
       <div className="flex items-center space-x-3 mb-3">
-        <div className="p-2 rounded-lg bg-primary/10 flex items-center justify-center">
+        <div className="p-2 rounded-lg bg-[var(--accent-bg)] flex items-center justify-center">
           {icon}
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
       </div>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+      <p className="text-[var(--text-secondary)]">{description}</p>
     </div>
   </div>
 );
@@ -40,11 +40,11 @@ const AIPath: React.FC = () => {
 
       <div className="container mx-auto px-6 md:px-12 relative">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+          <div className="inline-flex items-center mb-3 px-3 py-1 rounded-full bg-[var(--accent-bg)] text-[var(--accent-default)] text-sm font-medium">
             <span>Learning Journey</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Your Path to AI Mastery</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
             Follow this step-by-step learning path to go from AI beginner to confidently building your own AI models.
           </p>
         </div>
@@ -57,28 +57,28 @@ const AIPath: React.FC = () => {
             number={1}
             title="Understand the Basics"
             description="Learn the fundamental concepts of AI without the technical jargon. Understand how machines learn and how AI is changing our world."
-            icon={<Brain className="h-5 w-5 text-primary" />}
+            icon={<Brain className="h-5 w-5 text-[var(--accent-default)]" />}
           />
           
           <PathStep 
             number={2}
             title="Explore AI Models"
             description="Discover the different types of AI models and how they work. Get to know neural networks, machine learning, and deep learning in simple terms."
-            icon={<Layers className="h-5 w-5 text-primary" />}
+            icon={<Layers className="h-5 w-5 text-[var(--accent-default)]" />}
           />
           
           <PathStep 
             number={3}
             title="Build Simple Models"
             description="Start creating your own AI models with no-code tools. See immediate results and gain confidence in working with AI technologies."
-            icon={<Code className="h-5 w-5 text-primary" />}
+            icon={<Code className="h-5 w-5 text-[var(--accent-default)]" />}
           />
           
           <PathStep 
             number={4}
             title="Apply AI in Real Life"
             description="Learn how to incorporate AI into your daily life and work. Discover practical applications that solve real problems you face."
-            icon={<Lightbulb className="h-5 w-5 text-primary" />}
+            icon={<Lightbulb className="h-5 w-5 text-[var(--accent-default)]" />}
           />
           
           <div className="flex justify-center pt-10 relative z-10">
